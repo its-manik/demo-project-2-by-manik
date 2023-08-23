@@ -1,37 +1,10 @@
-"use client";
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-// import required modules
-import { Pagination, Navigation } from "swiper/modules";
 
 import Image from "next/image";
-
 import TestimonialImage01 from "@/public/images/testimonial-01.jpg";
 import TestimonialImage02 from "@/public/images/testimonial-02.jpg";
 import TestimonialImage03 from "@/public/images/testimonial-03.jpg";
 
 export default function Testimonials() {
-  const [swiperRef, setSwiperRef] = useState(null);
-
-  const [slidesPerView, setSlidesPerView] = useState(3);
-
-  window.addEventListener("resize", (e) => {
-    if(window.innerWidth < 900){
-      setSlidesPerView(2)
-      console.log(slidesPerView, window.innerWidth);
-      
-    }
-    if(window.innerWidth < 600){
-      setSlidesPerView(1)
-    }
-  });
 
   return (
     <section>
@@ -47,21 +20,9 @@ export default function Testimonials() {
             </p>
           </div>
           {/* Testimonials */}
-          <div className="">
-            <Swiper
-              onSwiper={setSwiperRef}
-              slidesPerView={slidesPerView}
-              centeredSlides={false}
-              spaceBetween={30}
-              pagination={{
-                type: "fraction",
-              }}
-              navigation={true}
-              modules={[Navigation]}
-              className="mySwiper"
-            >
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
               {/* 1st testimonial */}
-              <SwiperSlide>
+              <div className="rounded-md overflow-hidden">
                 <div
                   className="flex flex-col h-full p-6 bg-gray-800"
                   data-aos="fade-up"
@@ -85,14 +46,12 @@ export default function Testimonials() {
                     </div>
                   </div>
                   <blockquote className="text-lg text-gray-400 grow">
-                    — Open PRO lets me quickly get the insights I care about so
-                    that I can focus on my productive work. I've had Open PRO
-                    for about 24 hours now and I honestly don't know how I
-                    functioned without it before.
+                    I ordered this vitamin for the first time and after seeing its quality and effects, I can say that it will most likely be part of my daily routine from now on! 
+                    I recommend It with all my heart!
                   </blockquote>
                   <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
                     <cite className="text-gray-200 not-italic">
-                      Anastasia Dan
+                      Nicoleta Pop
                     </cite>{" "}
                     -{" "}
                     <a
@@ -103,10 +62,10 @@ export default function Testimonials() {
                     </a>
                   </div>
                 </div>
-              </SwiperSlide>
+              </div>
 
               {/* 2nd testimonial */}
-              <SwiperSlide>
+              <div className="rounded-md overflow-hidden">
                 <div
                   className="flex flex-col h-full p-6 bg-gray-800"
                   data-aos="fade-up"
@@ -131,14 +90,12 @@ export default function Testimonials() {
                     </div>
                   </div>
                   <blockquote className="text-lg text-gray-400 grow">
-                    — Open PRO lets me quickly get the insights I care about so
-                    that I can focus on my productive work. I've had Open PRO
-                    for about 24 hours now and I honestly don't know how I
-                    functioned without it before.
+                    We have been using this vitamin for a few weeks now and the whole family now has a constant state of well-being and more anergy! 
+                    10 stars for this natural vitamin that i would recommend to everyone!
                   </blockquote>
                   <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
                     <cite className="text-gray-200 not-italic">
-                      Anastasia Dan
+                      Andrei Gordan
                     </cite>{" "}
                     -{" "}
                     <a
@@ -149,10 +106,10 @@ export default function Testimonials() {
                     </a>
                   </div>
                 </div>
-              </SwiperSlide>
+              </div>
 
               {/* 3rd testimonial */}
-              <SwiperSlide>
+              <div className="rounded-md overflow-hidden">
                 <div
                   className="flex flex-col h-full p-6 bg-gray-800"
                   data-aos="fade-up"
@@ -177,14 +134,12 @@ export default function Testimonials() {
                     </div>
                   </div>
                   <blockquote className="text-lg text-gray-400 grow">
-                    — Open PRO lets me quickly get the insights I care about so
-                    that I can focus on my productive work. I've had Open PRO
-                    for about 24 hours now and I honestly don't know how I
-                    functioned without it before.
+                  I ordered this vitamin for the first time and after seeing its quality and effects, I can say that it will most likely be part of my daily routine from now on! 
+                    I recommend It with all my heart!
                   </blockquote>
                   <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
                     <cite className="text-gray-200 not-italic">
-                      Anastasia Dan
+                      Razvan Arhire
                     </cite>{" "}
                     -{" "}
                     <a
@@ -195,10 +150,10 @@ export default function Testimonials() {
                     </a>
                   </div>
                 </div>
-              </SwiperSlide>
+              </div>
 
               {/* 4th testimonial */}
-              <SwiperSlide>
+              <div className="rounded-md overflow-hidden">
                 <div
                   className="flex flex-col h-full p-6 bg-gray-800"
                   data-aos="fade-up"
@@ -240,10 +195,10 @@ export default function Testimonials() {
                     </a>
                   </div>
                 </div>
-              </SwiperSlide>
+              </div>
 
               {/* 5th testimonial */}
-              <SwiperSlide>
+              <div className="rounded-md overflow-hidden">
                 <div
                   className="flex flex-col h-full p-6 bg-gray-800"
                   data-aos="fade-up"
@@ -286,8 +241,52 @@ export default function Testimonials() {
                     </a>
                   </div>
                 </div>
-              </SwiperSlide>
-            </Swiper>
+              </div>
+
+
+               {/* 6th testimonial */}
+               <div className="rounded-md overflow-hidden">
+                <div
+                  className="flex flex-col h-full p-6 bg-gray-800"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div>
+                    <div className="relative inline-flex flex-col mb-4">
+                      <Image
+                        className="rounded-full"
+                        src={TestimonialImage02}
+                        width={48}
+                        height={48}
+                        alt="Testimonial 02"
+                      />
+                      <svg
+                        className="absolute top-0 right-0 -mr-3 w-6 h-5 fill-current text-purple-600"
+                        viewBox="0 0 24 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M0 13.517c0-2.346.611-4.774 1.833-7.283C3.056 3.726 4.733 1.648 6.865 0L11 2.696C9.726 4.393 8.777 6.109 8.152 7.844c-.624 1.735-.936 3.589-.936 5.56v4.644H0v-4.531zm13 0c0-2.346.611-4.774 1.833-7.283 1.223-2.508 2.9-4.586 5.032-6.234L24 2.696c-1.274 1.697-2.223 3.413-2.848 5.148-.624 1.735-.936 3.589-.936 5.56v4.644H13v-4.531z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <blockquote className="text-lg text-gray-400 grow">
+                    We have been using this vitamin for a few weeks now and the whole family now has a constant state of well-being and more anergy! 
+                    10 stars for this natural vitamin that i would recommend to everyone!
+                  </blockquote>
+                  <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
+                    <cite className="text-gray-200 not-italic">
+                      Andrei Gordan
+                    </cite>{" "}
+                    -{" "}
+                    <a
+                      className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out"
+                      href="#0"
+                    >
+                      UX Board
+                    </a>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
       </div>
